@@ -1,18 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReTro</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-    <header>
+    <header class="px-12 py-5 ">
+        <!-- NavBar  -->
+        <nav>
+            <div class="flex justify-between navbar ">
+                <div class=" ">
+                    <!-- <a class="btn btn-ghost text-4xl font-bold">ReTro</a> -->
+                    <img src="images/logo.png" alt="">
+                </div>
+                <div class="flex mx-5 ">
+                    <ul class="menu menu-horizontal gap-4 justify-between items-end">
+                        <li class="tooltip tooltip-bottom" data-tip="Home"><button class="btn btn-circle"><img
+                                    src="images/home.png" alt="">
+                            </button></li>
+                        <li class="tooltip tooltip-bottom" data-tip="Edit"><button class="btn  btn-circle"><img
+                                    src="images/edit.png" alt="">
+                            </button></li>
+                        <li class="tooltip tooltip-bottom" data-tip="Add"><button class="btn  btn-circle"><img
+                                    src="images/add.png" alt="">
+                            </button></li>
+                        <li class="tooltip tooltip-bottom" data-tip="Flag"><button class="btn btn-circle"><img
+                                    src="images/flag.png" alt="">
+                            </button></li>
 
+
+                        <button class="btn btn-active rounded-full bg-[#797DFC] text-white px-10">Sign In</button>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Hero Section  -->
+        <div class="hero  bg-[#12132D] rounded-3xl p-16" style="background-image: url('images/bgbanner.png')">
+            <div class=" hero-content flex justify-between gap-20 w-auto">
+                <div class="text-left ">
+                    <h1 class="text-6xl font-bold text-[#FFFFFF99] text-gradient bg-opacity-63 w-auto">Welcome to the
+                        <span class="bg-gradient-to-r from-blue-500 to-white text-[#797DFC] bg-clip-text">ReTro</span>
+                        Forum
+                    </h1>
+                    <p class="py-6 text-[#FFFFFFCC]">Share your favorite opinion and win and wp forum coffee mug!</p>
+                    <div class="input flex justify-between items-center rounded-full w-96 py-7">
+                        <input type="text" class=" bg-red-400 p-2" placeholder="Search here anything" />
+
+
+                        <!-- <span class="badge badge-info">Optional</span> -->
+                        <button class="btn btn-active rounded-full bg-[#797DFC] text-white px-10 my-5 ">Search</button>
+                    </div>
+                </div>
+                <div class="card  w-full max-w-xs shadow-2xl bg-base-100 p-6 ">
+                    <table class="table text-xl">
+                        <tr>
+                            <td>Registered User</td>
+                            <td>01</td>
+                        </tr>
+                        <tr>
+                            <td>Forum</td>
+                            <td>05</td>
+                        </tr>
+                        <tr>
+                            <td>Topics</td>
+                            <td>01</td>
+                        </tr>
+                        <tr>
+                            <td>Replies</td>
+                            <td>01</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </header>
-    <main>
+    <main class="px-12 py-5">
+        <!-- Discussion section  -->
+        <section>
+            <h1 class="text-4xl font-bold text-center">Let's Discuss</h1>
+            <p class="w-auto text-center ">Yes, you can run unit tests and view the results directly within
+                the app.
+                The integrated
+                testing features allow for a streamlined.</p>
 
+        </section>
     </main>
     <footer>
 
