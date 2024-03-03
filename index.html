@@ -52,9 +52,11 @@
 
 
                         <!-- <span class="badge badge-info">Optional</span> -->
-                        <button class="btn btn-active rounded-full bg-[#797DFC] text-white px-10 my-5 ">Search</button>
+                        <button onclick="search()"
+                            class="btn btn-active rounded-full bg-[#797DFC] text-white px-10 my-5 ">Search</button>
                     </div>
                 </div>
+                <!-- LeftSide Box -->
                 <div class="card  w-full max-w-xs shadow-2xl bg-base-100 p-6 ">
                     <table class="table text-xl">
                         <tr>
@@ -90,97 +92,9 @@
                     integrated testing
                     features allow for a streamlined .</p>
             </div>
-            <div class="flex gap-5">
+            <div class="flex gap-5 items-start">
                 <!-- Left Part  -->
-                <div class="flex flex-col ">
-
-                    <!-- 01 -->
-                    <div class="flex gap-5 mb-5 bg-[#F3F3F5] p-10 py-14 rounded-3xl">
-                        <!-- profile icon  -->
-                        <div class="avatar online w-16 h-16">
-                            <div class="w-24 rounded-full">
-                                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                            </div>
-                        </div>
-                        <!-- Details  -->
-                        <div>
-                            <!-- first Line  -->
-                            <div class="flex flex-row gap-5 mb-5">
-                                <p># Music</p>
-                                <p>Author : Awlad Hossain</p>
-                            </div>
-                            <h3 class="card-title mb-5">10 Kids Unaware of Their Halloween Costume</h3>
-                            <p class="mb-5">It's one thing to subject yourself to ha Halloween costume mishap because,
-                                hey that's
-                                your prerogative</p>
-                            <hr class="border-dashed border-gray-400 mb-5">
-                            <!-- Last Line  -->
-                            <div class="flex justify-between">
-                                <!-- Icons  -->
-                                <div class="flex gap-5">
-                                    <div class="flex gap-2">
-                                        <img src="images/msg.png" alt="">
-                                        <p>560</p>
-                                    </div>
-                                    <div class="flex gap-2">
-                                        <img src="images/eye.png" alt="">
-                                        <p>1,568</p>
-                                    </div>
-                                    <div class="flex gap-2">
-                                        <img src="images/time.png" alt="">
-                                        <p>5 Min</p>
-                                    </div>
-
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                                <div><img src="images/email 1.png" alt=""></div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- 02 -->
-                    <div class="flex gap-5 mb-5 bg-[#F3F3F5] p-10 py-14 rounded-3xl">
-                        <!-- profile icon  -->
-                        <div class="avatar online w-16 h-16">
-                            <div class="w-24 rounded-full">
-                                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                            </div>
-                        </div>
-                        <!-- Details  -->
-                        <div>
-                            <!-- first Line  -->
-                            <div class="flex flex-row gap-5 mb-5">
-                                <p># Music</p>
-                                <p>Author : Awlad Hossain</p>
-                            </div>
-                            <h3 class="card-title mb-5">10 Kids Unaware of Their Halloween Costume</h3>
-                            <p class="mb-5">It's one thing to subject yourself to ha Halloween costume mishap because,
-                                hey that's
-                                your prerogative</p>
-                            <hr class="border-dashed border-gray-400 mb-5">
-                            <!-- Last Line  -->
-                            <div class="flex justify-between">
-                                <!-- Icons  -->
-                                <div class="flex gap-5">
-                                    <div class="flex gap-2">
-                                        <img src="images/msg.png" alt="">
-                                        <p>560</p>
-                                    </div>
-                                    <div class="flex gap-2">
-                                        <img src="images/eye.png" alt="">
-                                        <p>1,568</p>
-                                    </div>
-                                    <div class="flex gap-2">
-                                        <img src="images/time.png" alt="">
-                                        <p>5 Min</p>
-                                    </div>
-                                </div>
-                                <div><img src="images/email 1.png" alt=""></div>
-                            </div>
-                        </div>
-
-                    </div>
+                <div class="flex flex-col" id="post-container">
                 </div>
                 <!-- Right Part  -->
 
@@ -240,94 +154,7 @@
                     features allow for a streamlined .</p>
             </div>
             <!-- Cards  -->
-            <div class="flex sm:flex-1 lg:flex-3 justify-between gap-10">
-                <!-- card-1 -->
-                <div class="card w-auto bg-base-100 shadow-xl border-solid border-2 ">
-                    <figure class="px-7 pt-7">
-                        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"
-                            class="rounded-xl" />
-                    </figure>
-                    <div class="card-body items-start text-start">
-                        <!-- Calender Div -->
-                        <div class="flex">
-                            <img src="images/calender_icon.png" alt="">
-                            <p>15th June,2000</p>
-                        </div>
-                        <h2 class=" card-title my-3">What will a mars habitat force that impact in our daily
-                            life!!!</h2>
-                        <p class="mb-3">Yes, you can run unit tests and view the results directly within the app.</p>
-                        <!-- profile -->
-                        <div class="card-actions">
-                            <div class="avatar">
-                                <div class="w-14 rounded-full">
-                                    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                                </div>
-                            </div>
-                            <div>
-                                <h1 class="card-title">Name</h1>
-                                <p>Designation</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- card-2  -->
-                <div class="card w-auto bg-base-100 shadow-xl border-solid border-2 ">
-                    <figure class="px-7 pt-7">
-                        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"
-                            class="rounded-xl" />
-                    </figure>
-                    <div class="card-body items-start text-start">
-                        <!-- Calender Div -->
-                        <div class="flex">
-                            <img src="images/calender_icon.png" alt="">
-                            <p>15th June,2000</p>
-                        </div>
-                        <h2 class=" card-title my-3">What will a mars habitat force that impact in our daily
-                            life!!!</h2>
-                        <p class="mb-3">Yes, you can run unit tests and view the results directly within the app.</p>
-                        <!-- profile -->
-                        <div class="card-actions">
-                            <div class="avatar">
-                                <div class="w-14 rounded-full">
-                                    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                                </div>
-                            </div>
-                            <div>
-                                <h1 class="card-title">Name</h1>
-                                <p>Designation</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- card-3  -->
-                <div class="card w-auto bg-base-100 shadow-xl border-solid border-2 ">
-                    <figure class="px-7 pt-7">
-                        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"
-                            class="rounded-xl" />
-                    </figure>
-                    <div class="card-body items-start text-start">
-                        <!-- Calender Div -->
-                        <div class="flex">
-                            <img src="images/calender_icon.png" alt="">
-                            <p>15th June,2000</p>
-                        </div>
-                        <h2 class=" card-title my-3">What will a mars habitat force that impact in our daily
-                            life!!!</h2>
-                        <p class="mb-3">Yes, you can run unit tests and view the results directly within the app.</p>
-                        <!-- profile -->
-                        <div class="card-actions">
-                            <div class="avatar">
-                                <div class="w-14 rounded-full">
-                                    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                                </div>
-                            </div>
-                            <div>
-                                <h1 class="card-title">Name</h1>
-                                <p>Designation</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="flex sm:flex-1 lg:flex-3 justify-between gap-10" id="latest-post-container">
             </div>
         </section>
 
@@ -354,6 +181,10 @@
             <p class="text-slate-500">2017, All Rights Reserved.</p>
         </footer>
     </footer>
+
+
+
+    <script src="scripts/scripts.js"></script>
 </body>
 
 </html>
