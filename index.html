@@ -48,11 +48,10 @@
                     </h1>
                     <p class="py-6 text-[#FFFFFFCC]">Share your favorite opinion and win and wp forum coffee mug!</p>
                     <div class="input flex justify-between items-center rounded-full w-96 py-7">
-                        <input type="text" class=" bg-red-400 p-2" placeholder="Search here anything" />
-
-
+                        <input id="search-field" type="text" class=" bg-red-400 p-2"
+                            placeholder="Search here anything" />
                         <!-- <span class="badge badge-info">Optional</span> -->
-                        <button onclick="search()"
+                        <button onclick="searchItem()"
                             class="btn btn-active rounded-full bg-[#797DFC] text-white px-10 my-5 ">Search</button>
                     </div>
                 </div>
@@ -159,28 +158,28 @@
         </section>
 
     </main>
-    <footer>
-        <footer class="footer footer-center px-10 py-20 bg-gray-200 ">
-            <aside>
-                <img src="images/logo.png" alt="">
-                <p class="w-4/6">
-                    Bringing the best of the past to the forefront of the future. Retro - where every pixel tells a
-                    story.Dive into the digital age with a classic touch.
-                </p>
-            </aside>
-            <!-- width="20" height="20" viewBox="0 0 24 24" -->
-            <nav>
-                <div class="grid grid-flow-col gap-7">
-                    <a><img src="images/1.png" alt=""></a>
-                    <a><img src="images/2.png" alt=""></a>
-                    <a><img src="images/3.png" alt=""></a>
-                    <a><img src="images/4.png" alt=""></a>
-                </div>
-            </nav>
-            <hr class="border-dashed border-black mb-5">
-            <p class="text-slate-500">2017, All Rights Reserved.</p>
-        </footer>
+    <footer class="footer footer-center px-10 py-20 bg-gray-200">
+        <aside>
+            <img src="images/logo.png" alt="">
+            <p class="w-4/6">
+                Bringing the best of the past to the forefront of the future. Retro - where every pixel tells a
+                story. Dive into the digital age with a classic touch.
+            </p>
+        </aside>
+        <!-- width="20" height="20" viewBox="0 0 24 24" -->
+        <nav>
+            <div class="grid grid-flow-col gap-7">
+                <a><img src="images/1.png" alt=""></a>
+                <a><img src="images/2.png" alt=""></a>
+                <a><img src="images/3.png" alt=""></a>
+                <a><img src="images/4.png" alt=""></a>
+            </div>
+        </nav>
+        <!-- Add border class -->
+        <p class="text-slate-500">2017, All Rights Reserved.</p>
     </footer>
+
+
 
 
 

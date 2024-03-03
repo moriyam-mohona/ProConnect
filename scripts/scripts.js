@@ -1,15 +1,14 @@
-const loadPosts = async function () {
-    const res1 = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
-    const { posts } = await res1.json();
-    // const posts = data.posts;
-    // console.log(posts);
+const loadPosts = async function (searchText) {
+
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts${searchText ? `?category=${searchText}` : ''}`);
+    const { posts } = await res.json();
     displayPosts(posts);
-}
+};
+
 function displayPosts(posts) {
     const postContainer = document.getElementById('post-container');
-    // console.log(postContainer);
+    postContainer.textContent = ' ';
     posts.forEach(posts => {
-        // console.log(posts);
         const postCard = document.createElement('div');
         postCard.classList = `flex gap-5 mb-5 bg-[#F3F3F5] p-10 py-14 rounded-3xl`;
         postCard.innerHTML = `
@@ -54,25 +53,20 @@ function displayPosts(posts) {
     });
 }
 loadPosts();
-
-// const latestPosts = async function () {
-//     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
-//     const data = await res.json();
-//     for (data in )
-//         console.log(data);
-// }
+const searchItem = () => {
+    const searchItem = document.getElementById('search-field');
+    const searchText = searchItem.value;
+    loadPosts(searchText);
+}
 
 
-// latestPosts();
-
-
-const latestPosts = async () => {
+const latestPosts = async function () {
 
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
     const data = await res.json();
     displayLatestPosts(data);
 
-};
+}
 
 const displayLatestPosts = posts => {
     const latestPostContainer = document.getElementById('latest-post-container');
