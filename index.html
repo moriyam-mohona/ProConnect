@@ -10,15 +10,39 @@
 </head>
 
 <body>
-    <header class="px-12 py-5 ">
+    <header class="px-3 lg:px-12 py-10 ">
         <!-- NavBar  -->
-        <nav class="mb-20">
-            <div class="flex justify-between navbar ">
-                <div class=" ">
-                    <img src="images/logo.png" alt="">
+        <nav>
+            <div class="navbar bg-base-100 mb-10 flex justify-between">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box items-start">
+                            <li class="tooltip tooltip-bottom" data-tip="Home"><button class="btn btn-circle"><img
+                                        src="images/home.png" alt="">
+                                </button></li>
+                            <li class="tooltip tooltip-bottom" data-tip="Edit"><button class="btn  btn-circle"><img
+                                        src="images/edit.png" alt="">
+                                </button></li>
+                            <li class="tooltip tooltip-bottom" data-tip="Add"><button class="btn  btn-circle"><img
+                                        src="images/add.png" alt="">
+                                </button></li>
+                            <li class="tooltip tooltip-bottom" data-tip="Report"><button class="btn btn-circle"><img
+                                        src="images/flag.png" alt="">
+                                </button></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost"><img src="images/logo.png" alt=""></a>
                 </div>
-                <div class="flex mx-5 ">
-                    <ul class="menu menu-horizontal gap-4 justify-between items-end">
+                <div class="navbar-end hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 gap-4 justify-between items-end">
                         <li class="tooltip tooltip-bottom" data-tip="Home"><button class="btn btn-circle"><img
                                     src="images/home.png" alt="">
                             </button></li>
@@ -31,33 +55,33 @@
                         <li class="tooltip tooltip-bottom" data-tip="Report"><button class="btn btn-circle"><img
                                     src="images/flag.png" alt="">
                             </button></li>
-
-
-                        <button class="btn btn-active rounded-full bg-[#797DFC] text-white px-10">Sign In</button>
                     </ul>
                 </div>
+                <button class="btn btn-active rounded-full bg-[#797DFC] text-white px-10 ">Sign In</button>
             </div>
         </nav>
         <!-- Hero Section  -->
-        <div class="hero bg-[#12132D] rounded-3xl p-16" style="background-image: url('images/bgbanner.png')">
-            <div class=" hero-content flex justify-between gap-20 w-auto">
-                <div class="text-left ">
-                    <h1 class="text-6xl font-bold text-[#FFFFFF99] text-gradient bg-opacity-63 w-auto">Welcome to the
-                        <span class="bg-gradient-to-r from-blue-500 to-white text-[#797DFC] bg-clip-text">ReTro</span>
-                        Forum
+        <div class="hero bg-[#12132D] rounded-3xl p-8 lg:p-16 " style="background-image: url('images/bgbanner.png')">
+            <!-- LeftSide Content  -->
+            <div class="hero-content flex flex-col lg:flex-row justify-between gap-8 lg:gap-20 w-auto">
+                <div class="text-left w-full lg:w-1/2">
+                    <h1 class="text-4xl lg:text-6xl font-bold text-[#FFFFFF99] text-gradient bg-opacity-63">
+                        Welcome to the
+                        <span class="text-[#797DFC]">ReTro</span> Forum
                     </h1>
-                    <p class="py-6 text-[#FFFFFFCC]">Share your favorite opinion and win and wp forum coffee mug!</p>
-                    <div class="input flex justify-between items-center rounded-full w-96 py-7">
-                        <input id="search-field" type="text" class=" bg-red-400 p-2"
+                    <p class="py-4 lg:py-6 text-[#FFFFFFCC]">Share your favorite opinion and win a Retro Forum coffee
+                        mug!</p>
+                    <div class="input flex justify-between items-center rounded-full w-full lg:w-96 py-7">
+                        <input id="search-field" type="text" class="bg-red-400 p-2 mb-2 lg:mb-0 w-full lg:w-64"
                             placeholder="Search here anything" />
                         <!-- <span class="badge badge-info">Optional</span> -->
                         <button onclick="searchItem()"
-                            class="btn btn-active rounded-full bg-[#797DFC] text-white px-10 my-5 ">Search</button>
+                            class="btn btn-active rounded-full bg-[#797DFC] text-white px-6 lg:px-10">Search</button>
                     </div>
                 </div>
-                <!-- LeftSide Box -->
-                <div class="card  w-full max-w-xs shadow-2xl bg-base-100 p-6 ">
-                    <table class="table text-xl">
+                <!-- RightSide Box -->
+                <div class="card w-full max-w-xs lg:w-1/4 lg:max-w-full shadow-2xl bg-base-100 p-4 lg:p-6 mt-8 lg:mt-0">
+                    <table class="table text-lg lg:text-xl">
                         <tr>
                             <td>Registered User</td>
                             <td>01</td>
@@ -78,11 +102,12 @@
                 </div>
             </div>
         </div>
+
     </header>
-    <main class="px-12 py-5">
-        <!-- Discussion section  -->
-        <section class="mb-20">
-            <div class="flex flex-col items-center my-20">
+    <main class="px-3 lg:px-12 py-10">
+        <!-- Let's Discuss Section  -->
+        <section class="mb-20 px-3 lg:px-12 py-10">
+            <div class="flex flex-col items-center my-10">
                 <h1 class="text-4xl font-bold mb-5">Let's Discuss</h1>
                 <p class="text-center max-w-xl">Yes, you can run unit tests and view the results directly
                     within
@@ -91,56 +116,43 @@
                     integrated testing
                     features allow for a streamlined .</p>
             </div>
-            <div class="flex gap-5 items-start">
-                <!-- Left Part  -->
+            <div class="flex flex-col lg:flex-row gap-5 items-start">
+                <!-- Posts Part -->
                 <div class="flex flex-col" id="post-container">
                 </div>
-                <!-- Right Part  -->
-
-                <div class="bg-[#F3F3F5] rounded-3xl p-7 h-auto">
-                    <div class="flex justify-between mb-8">
-                        <h3 class="">Title </h3>
-                        <div class="flex">
-                            <img src="images/Marked.png" alt="">
-                            <p>Mark as read<span>(1)</span></p>
+                <!-- Notification Part -->
+                <div class="bg-[#F3F3F5] rounded-3xl p-5 lg:p-7 h-auto w-auto">
+                    <div class="flex flex-row items-center justify-between mb-4 lg:mb-8">
+                        <h3 class="font-semibold text-base lg:text-xl">Title </h3>
+                        <div class="flex mt-2 lg:mt-0">
+                            <img src="images/Marked.png" alt="" class="w-6 lg:w-8">
+                            <p id="mark-as-read-text" class="ml-2 lg:ml-4 text-xs lg:text-sm">Mark as
+                                read<span>(0)</span></p>
                         </div>
                     </div>
                     <!-- Notification Sector  -->
-                    <div class="flex justify-between gap-2 rounded-2xl p-3 bg-white my-3">
-                        <p class="">10 Kids Unaware of Their Halloween Costume</p>
-                        <div class="flex justify-between items-center mr-5">
-                            <img src="images/eye.png" class="" alt="">
-                            <p>1,568</p>
-                        </div>
-                    </div>
-                    <div class="flex justify-between gap-2 rounded-2xl p-3 bg-white my-3">
-                        <p class="">10 Kids Unaware of Their Halloween Costume</p>
-                        <div class="flex justify-between items-center mr-5">
-                            <img src="images/eye.png" class="" alt="">
-                            <p>1,568</p>
-                        </div>
+                    <div id="notification-container">
                     </div>
                 </div>
-
             </div>
 
         </section>
         <!-- Join Forum Section (Design Purpose) -->
-        <section class="bg-[#12132D] rounded-3xl p-24 flex items-center gap-20 mb-20">
-            <div class="">
-                <h1 class="text-4xl font-bold text-white mb-8">Join Our Forum</h1>
-                <p class="text-white mb-8">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run
-                    unit
-                    tests and view the
-                    results directly
-                    within the app.</p>
-                <button class="btn btn-active rounded-full bg-[#797DFC] text-white px-10 border-none">Registered
+        <section
+            class="flex flex-col lg:flex-row bg-[#12132D] rounded-3xl px-5 lg:px-12 py-10 items-center gap-8 lg:gap-20 mb-20">
+            <div class="text-center lg:text-left mb-8 lg:mb-0 lg:mr-8">
+                <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-8">Join Our Forum</h1>
+                <p class="text-white mb-4 ">Share your favorite opinion and win and wp forum coffee mug! Yes, you can
+                    run
+                    unit tests and view the results directly within the app.</p>
+                <button class="btn btn-active rounded-full bg-[#797DFC] text-white px-8 lg:px-10 border-none">Register
                     Now</button>
             </div>
-
-
-            <div><img src="images/joinforum.png" alt=""></div>
+            <div class="flex justify-center">
+                <img src="images/joinforum.png" alt="" class="w-full lg:w-auto h-auto">
+            </div>
         </section>
+
         <!-- Latest Posts -->
         <section class="mb-20">
             <div class="flex flex-col items-center my-20">
@@ -153,36 +165,29 @@
                     features allow for a streamlined .</p>
             </div>
             <!-- Cards  -->
-            <div class="flex sm:flex-1 lg:flex-3 justify-between gap-10" id="latest-post-container">
+            <div class="flex flex-col lg:flex-row justify-between gap-10" id="latest-post-container">
             </div>
         </section>
-
     </main>
-    <footer class="footer footer-center px-10 py-20 bg-gray-200">
-        <aside>
-            <img src="images/logo.png" alt="">
-            <p class="w-4/6">
+    <footer class="footer footer-center sm:px-3 lg:px-12 py-10 bg-gray-200">
+        <aside class="text-center lg:text-left mb-6 lg:mb-0 lg:mr-8">
+            <img src="images/logo.png" alt="" class="mb-4">
+            <p class="w-full lg:w-4/6">
                 Bringing the best of the past to the forefront of the future. Retro - where every pixel tells a
                 story. Dive into the digital age with a classic touch.
             </p>
         </aside>
-        <!-- width="20" height="20" viewBox="0 0 24 24" -->
-        <nav>
-            <div class="grid grid-flow-col gap-7">
+        <nav class="mb-4 lg:mb-0">
+            <div class="grid grid-flow-col gap-7 border-b pb-2 lg:border-none lg:pb-0">
                 <a><img src="images/1.png" alt=""></a>
                 <a><img src="images/2.png" alt=""></a>
                 <a><img src="images/3.png" alt=""></a>
                 <a><img src="images/4.png" alt=""></a>
             </div>
         </nav>
-        <!-- Add border class -->
-        <p class="text-slate-500">2017, All Rights Reserved.</p>
+        <div class="border-x-4 border-dashed border-indigo-500 w-auto"></div>
+        <p>2017, All Rights Reserved.</p>
     </footer>
-
-
-
-
-
     <script src="scripts/scripts.js"></script>
 </body>
 
