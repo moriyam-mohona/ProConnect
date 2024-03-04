@@ -1,57 +1,75 @@
-
-
 const loadPosts = async function (searchText) {
+    toggleLoadingSpinner(true);
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts${searchText ? `?category=${searchText}` : ''}`);
     const { posts } = await res.json();
-    displayPosts(posts);
+
+    setTimeout(() => {
+        displayPosts(posts);
+        toggleLoadingSpinner(false);
+    }, 2000);
 };
 
 function displayPosts(posts) {
     const postContainer = document.getElementById('post-container');
-    postContainer.textContent = ' ';
-    posts.forEach(posts => {
+    postContainer.textContent = ''; // Clear previous posts
+
+    posts.forEach(post => {
         const postCard = document.createElement('div');
         postCard.classList = `flex gap-5 mb-5 bg-[#F3F3F5] p-8 py-8 rounded-3xl`;
         postCard.innerHTML = `
-                        <div class="avatar indicator">
-    <span class="indicator-item badge ${posts.isActive ? 'badge-success' : 'badge-error'}"></span>
-    <div class="w-16 h-16 lg:w-24 lg:h-24 rounded-lg">
-        <img src="${posts.image}" />
-    </div>
-</div>           
-<div class="w-full lg:w-[75%]">       
-    <div class="flex flex-col lg:flex-row gap-5 mb-5">
-        <p class="lg:w-1/2">#${posts.category}</p>
-        <p class="lg:w-1/2 lg:text-right">Author : ${posts.author.name}</p>
-    </div>
-    <h3 class="card-title mb-5">${posts.title}</h3>
-    <p class="mb-5">${posts.description}</p>
-    <hr class="border-dashed border-gray-400 mb-5">
-    
-    <div class="flex justify-between">
-        <!-- Icons  -->
-        <div class="flex gap-5">
-            <div class="flex gap-2">
-                <img src="images/msg.png" alt="">
-                <p>${posts.comment_count}</p>
+            <div class="avatar indicator">
+                <span class="indicator-item badge ${post.isActive ? 'badge-success' : 'badge-error'}"></span>
+                <div class="w-16 h-16 lg:w-24 lg:h-24 rounded-lg">
+                    <img src="${post.image}" />
+                </div>
+            </div>           
+            <div class="w-full lg:w-[75%]">       
+                <div class="flex flex-col lg:flex-row gap-5 mb-5">
+                    <p class="lg:w-1/2">#${post.category}</p>
+                    <p class="lg:w-1/2 lg:text-right">Author : ${post.author.name}</p>
+                </div>
+                <h3 class="card-title mb-5">${post.title}</h3>
+                <p class="mb-5">${post.description}</p>
+                <hr class="border-dashed border-gray-400 mb-5">
+                <div class="flex justify-between">
+                    <!-- Icons  -->
+                    <div class="flex gap-5">
+                        <div class="flex gap-2">
+                            <img src="images/msg.png" alt="">
+                            <p>${post.comment_count}</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <img src="images/eye.png" alt="">
+                            <p>${post.view_count}</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <img src="images/time.png" alt="">
+                            <p>${post.posted_time} min</p>
+                        </div>
+                    </div>
+                    <button onclick="loadNotification('${post.title}', ${post.view_count})" class="notification"><img src="images/email 1.png" alt=""></button>
+                </div>
             </div>
-            <div class="flex gap-2">
-                <img src="images/eye.png" alt="">
-                <p>${posts.view_count}</p>
-            </div>
-            <div class="flex gap-2">
-                <img src="images/time.png" alt="">
-                <p>${posts.posted_time} min</p>
-            </div>
-        </div>
-        <button onclick="loadNotification('${posts.title}', ${posts.view_count})" class="notification"><img src="images/email 1.png" alt=""></button>
-    </div>
-</div>
-
         `;
         postContainer.appendChild(postCard);
     });
 }
+
+const searchItem = () => {
+    const searchInput = document.getElementById('search-field');
+    const searchText = searchInput.value;
+    loadPosts(searchText);
+};
+
+const toggleLoadingSpinner = (isLoading) => {
+    const loadingSpinner = document.getElementById('loading-spinner');
+    if (isLoading) {
+        loadingSpinner.classList.remove('hidden');
+    } else {
+        loadingSpinner.classList.add('hidden');
+    }
+};
+
 
 let notificationCount = 0;
 const loadNotification = function (title, viewCount) {
@@ -70,14 +88,8 @@ const loadNotification = function (title, viewCount) {
     const markAsReadText = document.getElementById('mark-as-read-text');
     markAsReadText.innerHTML = `Mark as read<span>(${notificationCount})</span>`;
 };
-
 loadPosts();
 
-const searchItem = () => {
-    const searchItem = document.getElementById('search-field');
-    const searchText = searchItem.value;
-    loadPosts(searchText);
-};
 
 const latestPosts = async function () {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
@@ -111,7 +123,7 @@ const displayLatestPosts = posts => {
                     </div>
                     <div>
                         <h1 class="card-title">${post.author.name}</h1>
-                        ${post.author.designation ? `<p>${post.author.designation}</p>` : 'undefined'}
+                        ${post.author.designation ? `<p>${post.author.designation}</p>` : 'unknown'}
                     </div>
                 </div>
             </div>
